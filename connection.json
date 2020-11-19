@@ -1,0 +1,10 @@
+{
+  "serverPort": 8080,
+  "proxyPort": 8005,
+  "services": {
+    "OData": {
+      "target": "https://services.odata.org/V2/(S(2wvdirjc42w0dm32cds4u00i))",
+      "auth": "user:password"
+    }
+  }
+}

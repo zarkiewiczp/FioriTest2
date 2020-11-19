@@ -1,0 +1,23 @@
+{
+  "name": "sapui5_171",
+  "version": "1.0.0",
+  "description": "SAPUI5 Application with library version 1.71",
+  "main": "proxy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DenisTis/SAPUI5_171.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DenisTis/SAPUI5_171/issues"
+  },
+  "homepage": "https://github.com/DenisTis/SAPUI5_171#readme",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "http-proxy": "^1.18.1"
+  }
+}
