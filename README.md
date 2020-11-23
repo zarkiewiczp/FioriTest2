@@ -11,9 +11,16 @@
 
 ## Proxy setup for backend connection to sap or reference odata services Proxy
 
-Maintain "connection.json" file: Proxy searches for entity name ("Northwind" in
-this case) in "connection.json" and replaces the name with configured path in
-server request.
+Maintain "connection.json" file:
+
+1. "mainPort": defines which port is used to serve static files
+2. "proxyPort": defines port through which final app is consumed
+3. "services": proxy searches for entity name ("Northwind" in this case) in
+   "connection.json" and replaces the name with configured path in server
+   request.
+
+Setting different combination of mainPort and proxyPort for different apps will
+allow you to have multiple instances of applications running at same time.
 
 Optionally: target in connectionJson should point to the same location as
 datasource uri in manifest.json
@@ -24,7 +31,4 @@ datasource uri in manifest.json
   general rules. Also allows to select, which element is used in which case.For
   example, search for element "Switch" and read "Usage" section.
 
-- Tutorials for Fiori versions. Contains as well "API Reference" and "Samples".
-
-  - [1.38.7](https://sapui5.hana.ondemand.com/1.38.7/#docs/guide/167193ced54c41c3961d7df3479d7bbe.html)
-  - [1.71.6](https://sapui5.hana.ondemand.com/1.71.6/#/topic/8b49fc198bf04b2d9800fc37fecbb218)
+- [Fiori version 1.71.27 tutorials](https://sapui5.hana.ondemand.com/1.71.27/#/topic/8b49fc198bf04b2d9800fc37fecbb218)
