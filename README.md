@@ -1,5 +1,9 @@
 # SAPUI5 application serving 1.71 library version
 
+## Multi-page Guidelines:
+
+1. App. page has no content and is used just as application controller
+
 ## First start: use terminal commands
 
 - npm install
