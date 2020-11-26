@@ -36,7 +36,7 @@ var allowCrossDomain = function(req, res) {
   } else {
     var dirname = req.url.replace(/^\/([^\/]*).*$/, "$1");
     var route = routing[dirname] || appRoute;
-    // console.log(req.method + ": " + route.target + req.url);
+    //    console.log(req.method + ": " + route.target + req.url);
     proxy.web(req, res, route);
   }
 };

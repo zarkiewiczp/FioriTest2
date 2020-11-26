@@ -1,9 +1,19 @@
-<mvc:View
+<mvc:View controllerName="companyRepo.appName.controller.Product"
   xmlns="sap.m"
   xmlns:mvc="sap.ui.core.mvc">
   <Page title="Product view" class="sapUiResponsiveContentPadding">
     <content>
-      <Button text="Product view button" class="sapUiTinyMarginEnd"/>
+      <!-- binding="{/Products(0)}" -->
+      <ObjectHeader id="productObjectHeader"
+		title="{Name}"
+		number="{ID}"
+		class="sapUiResponsivePadding--header" >
+        <!-- <statuses><ObjectStatus
+				text="{Description}" /></statuses> -->
+        <ObjectAttribute text="{Rating}" />
+        <ObjectAttribute text="{Price}" />
+        <ObjectAttribute text="{Description}" />
+      </ObjectHeader>
     </content>
   </Page>
 </mvc:View>

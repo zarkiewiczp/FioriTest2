@@ -1,6 +1,8 @@
 sap.ui.define(
-  ["sap/ui/core/mvc/Controller"],
-  function(Controller) {
+  ["sap/ui/core/mvc/Controller",
+    "companyRepo/appName/helper/Globals"
+  ],
+  function(Controller, Globals) {
     "use strict";
 
     return Controller.extend("companyRepo.appName.controller.Main", {
@@ -11,6 +13,8 @@ sap.ui.define(
 
       },
       onProductPress: function(event) {
+        let key = event.getSource().getBindingContext().getProperty("ID");
+        Globals.setProductKey(key);
         sap.ui.core.UIComponent.getRouterFor(this).navTo("routeProduct");
       }
     });
