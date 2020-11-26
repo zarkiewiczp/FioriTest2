@@ -6,7 +6,7 @@
 
 ## Start project: use terminal commands:
 
-1. node proxy.js
+1. node server.js
 2. Open url "http://localhost:8005/index.html"
 
 ## Proxy setup for backend connection to sap or reference odata services Proxy
