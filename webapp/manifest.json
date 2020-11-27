@@ -26,7 +26,41 @@
       "viewName": "companyRepo.appName.view.App",
       "type": "XML",
       "async": true,
-      "id": "app"
+      "id": "appId"
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "companyRepo.appName.view",
+        "controlId": "appId",
+        "controlAggregation": "pages",
+        "transition": "slide",
+        "async": true
+      },
+      "routes": [{
+          "pattern": "",
+          "name": "routeMain",
+          "target": "mainView"
+        },
+        {
+          "pattern": "productView",
+          "name": "routeProduct",
+          "target": "productView"
+        }
+      ],
+      "targets": {
+        "mainView": {
+          "viewId": "main",
+          "viewName": "Main",
+          "viewLevel": 1
+        },
+        "productView": {
+          "viewId": "product",
+          "viewName": "Product",
+          "viewLevel": 2
+        }
+      }
     },
     "models": {
       "": { "dataSource": "backendService" },

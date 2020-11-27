@@ -19,5 +19,8 @@
   "devDependencies": {
     "express": "^4.17.1",
     "http-proxy": "^1.18.1"
+  },
+  "dependencies": {
+    "@ui5/cli": "^2.6.5"
   }
 }

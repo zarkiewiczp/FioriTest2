@@ -1,7 +1,21 @@
 # SAPUI5 application serving 1.71 library version
 
+## Multi-page description:
+
+1. App. page has no content and is used just as application controller
+2. "Main" page is declared and loaded from manifes based on empty pattern
+3. Navigation to "Product" page uses "Globals" to read odata path instead of
+   hash
+4. Navigation to "Product" page requires additional "target" and "pattern" to be
+   declared in manifest. "Pattern" should not be empty, as it is for the "Main"
+   page.
+5. In case application is being started from "Product" page, router returns to
+   "Main" page
+
 ## First start: use terminal commands
 
+- npm install --global @ui5/cli (To load UI5 tools, like component preload,
+  upload to server and renaming of debug files)
 - npm install
 
 ## Start project: use terminal commands:

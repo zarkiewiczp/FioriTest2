@@ -1,0 +1,18 @@
+<mvc:View controllerName="companyRepo.appName.controller.Product"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Page title="Product view" class="sapUiResponsiveContentPadding"
+    showNavButton="true"
+		navButtonPress="navigateBack">
+    <content>
+      <ObjectHeader id="productObjectHeader"
+		title="{Name}"
+		number="{ID}"
+		class="sapUiResponsivePadding--header" >
+        <ObjectAttribute text="{Rating}" />
+        <ObjectAttribute text="{Price}" />
+        <ObjectAttribute text="{Description}" />
+      </ObjectHeader>
+    </content>
+  </Page>
+</mvc:View>
