@@ -1,15 +1,14 @@
 <mvc:View controllerName="companyRepo.appName.controller.Product"
   xmlns="sap.m"
   xmlns:mvc="sap.ui.core.mvc">
-  <Page title="Product view" class="sapUiResponsiveContentPadding">
+  <Page title="Product view" class="sapUiResponsiveContentPadding"
+    showNavButton="true"
+		navButtonPress="navigateBack">
     <content>
-      <!-- binding="{/Products(0)}" -->
       <ObjectHeader id="productObjectHeader"
 		title="{Name}"
 		number="{ID}"
 		class="sapUiResponsivePadding--header" >
-        <!-- <statuses><ObjectStatus
-				text="{Description}" /></statuses> -->
         <ObjectAttribute text="{Rating}" />
         <ObjectAttribute text="{Price}" />
         <ObjectAttribute text="{Description}" />
