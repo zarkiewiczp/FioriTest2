@@ -14,10 +14,8 @@ sap.ui.define(
         return;
       }
 
-      if (me.getView()) {
-        let bindingPath = "/Products(" + Globals.getProductKey() + ")";
-        me.getView().byId("productObjectHeader").bindObject(bindingPath);
-      }
+      let bindingPath = "/Products(" + Globals.getProductKey() + ")";
+      me.getView().byId("productObjectHeader").bindObject(bindingPath);
     }
 
     function navigateBack() {
