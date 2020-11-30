@@ -15,7 +15,7 @@ sap.ui.define(
       }
 
       let bindingPath = "/Products(" + Globals.getProductKey() + ")";
-      me.getView().byId("productObjectHeader").bindObject(bindingPath);
+      me.getView().byId("productForm").bindObject(bindingPath);
     }
 
     function navigateBack() {
@@ -31,6 +31,38 @@ sap.ui.define(
 
     }
 
+    function onSave() {
+      me.getView().getModel().submitChanges({
+        error: () => {
+          sap.m.MessageToast.show("Save operation failed");
+        },
+        success: () => {
+          sap.m.MessageToast.show("Save operation was successful");
+        }
+      });
+    }
+
+    function onCancel() {
+      me.getView().getModel().resetChanges();
+    }
+
+    function onDelete() {
+      me.getView().getModel().remove("/Products(" + Globals.getProductKey() + ")", {
+        method: "DELETE",
+        success: function() {
+          navigateBack();
+        },
+        error: function(e) {
+          sap.m.MessageToast.show("Delete failed");
+        }
+      });
+    }
+
+    function onContinued(date) {
+      let result = (date === null);
+      return !result;
+    }
+
     return Controller.extend("companyRepo.appName.controller.Product", {
       onInit: function() {
         me = this;
@@ -38,7 +70,11 @@ sap.ui.define(
         router.getRoute("routeProduct").attachPatternMatched(onRouteChange)
       },
       onRouteChange: onRouteChange,
-      navigateBack: navigateBack
+      navigateBack: navigateBack,
+      onSave: onSave,
+      isContinued: onContinued,
+      onCancel: onCancel,
+      onDelete: onDelete
     });
   }
 );
