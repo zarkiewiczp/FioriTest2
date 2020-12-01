@@ -2,7 +2,5 @@
   xmlns:mvc="sap.ui.core.mvc"
   xmlns:core="sap.ui.core"
   xmlns="sap.m" displayBlock="true">
-  <App id="appId">
-    <!-- <Page title="{i18n>Header}"><subHeader><Toolbar id="toolbar"><Button text="New Product" type="Accept" press="createProduct"/></Toolbar></subHeader><content><List headerText="Product Details" items="{/Products}"><items><ObjectListItem title="{Name}" number="{ID}" intro="{Description}"/></items></List></content></Page> -->
-  </App>
+  <App id="appId"></App>
 </mvc:View>

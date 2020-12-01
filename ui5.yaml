@@ -2,9 +2,3 @@ specVersion: "2.2"
 type: application
 metadata:
   name: CompanyRepo.appName
-builder:
-  componentPreload:
-    namespaces:
-      - "CompanyRepo/appName/Component"
-    paths:
-      - "Component-preload.js"

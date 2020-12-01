@@ -33,6 +33,8 @@
 						}"/>
           <Label text="ID" />
           <Input value="{ID}" editable="false" type="Text" />
+          <Label text="Name" />
+          <Input value="{Name}" type="Text" />
           <Label text="Description" />
           <Input value="{Description}" type="Text" />
           <Label text="Release date"/>
