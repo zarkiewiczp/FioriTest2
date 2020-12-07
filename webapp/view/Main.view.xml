@@ -2,11 +2,12 @@
   xmlns="sap.m"
   xmlns:mvc="sap.ui.core.mvc">
   <Page title="{i18n>Header}">
-    <subHeader>
+    <headerContent>
       <Toolbar id="toolbar">
-        <Button text="New Product" type="Accept" press="createProduct"/>
+        <ToolbarSpacer/>
+        <Button icon="sap-icon://add" text="New Product" press="createProduct"/>
       </Toolbar>
-    </subHeader>
+    </headerContent>
     <content>
       <List headerText="Product Details" items="{/Products}">
         <items>

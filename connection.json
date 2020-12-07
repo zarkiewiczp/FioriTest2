@@ -3,7 +3,7 @@
   "proxyPort": 8005,
   "services": {
     "OData": {
-      "target": "https://services.odata.org/V2/(S(2wvdirjc42w0dm32cds4u00i))",
+      "target": "https://services.odata.org/V2/(S(a2k31bgwiyejn2j2iiybvq4p))",
       "auth": "user:password"
     }
   }

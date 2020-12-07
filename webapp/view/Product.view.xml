@@ -2,6 +2,7 @@
   xmlns="sap.m"
   xmlns:l="sap.ui.layout"
   xmlns:f="sap.ui.layout.form"
+  xmlns:core="sap.ui.core"
   xmlns:mvc="sap.ui.core.mvc">
   <Page title="Product view" class="sapUiResponsiveContentPadding"
     showNavButton="true"
@@ -34,7 +35,7 @@
           <Label text="ID" />
           <Input value="{ID}" editable="false" type="Text" />
           <Label text="Name" />
-          <Input value="{Name}" type="Text" />
+          <Input id="productName" value="{Name}" type="Text" />
           <Label text="Description" />
           <Input value="{Description}" type="Text" />
           <Label text="Release date"/>
@@ -45,8 +46,30 @@
           <Input value="{Price}" type="Number" />
           <Label text="Discontinued date"/>
           <DatePicker  value="{path:'DiscontinuedDate', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'medium', strictParsing: true}}"/>
+          <Label text="Category"/>
+          <Select id="productCategorySelect" change="onProductCategoryChange"
+					items="{	path: '/Categories',
+						sorter: { path: 'Name' }}">
+            <core:Item key="{ID}" text="{Name}" />
+          </Select>
+          <Label text="Supplier"/>
+          <Select id="productSupplierSelect"
+					items="{	path: '/Suppliers',
+						sorter: { path: 'Name' }}">
+            <core:Item key="{ID}" text="{Name}" />
+          </Select>
         </f:content>
       </f:SimpleForm>
+      <List headerText="Product Suppliers" id="productSuppliers">
+        <items>
+          <ObjectListItem type="Inactive"  title="{ID} : {Name}"/>
+        </items>
+      </List>
     </content>
+    <List headerText="Product Categories" id="productCategories">
+      <items>
+        <ObjectListItem type="Inactive"  title="{ID} : {Name}"/>
+      </items>
+    </List>
   </Page>
 </mvc:View>

@@ -47,6 +47,11 @@
           "pattern": "productView",
           "name": "routeProduct",
           "target": "productView"
+        },
+        {
+          "pattern": "newProductView",
+          "name": "routeNewProduct",
+          "target": "newProductView"
         }
       ],
       "targets": {
@@ -58,6 +63,11 @@
         "productView": {
           "viewId": "product",
           "viewName": "Product",
+          "viewLevel": 2
+        },
+        "newProductView": {
+          "viewId": "newProduct",
+          "viewName": "NewProduct",
           "viewLevel": 2
         }
       }

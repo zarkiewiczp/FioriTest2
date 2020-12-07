@@ -1,0 +1,48 @@
+<mvc:View controllerName="companyRepo.appName.controller.NewProduct"
+  xmlns="sap.m"
+  xmlns:l="sap.ui.layout"
+  xmlns:f="sap.ui.layout.form"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Page title="New product view" class="sapUiResponsiveContentPadding"
+    showNavButton="true"
+		navButtonPress="navigateBack">
+    <headerContent>
+      <Toolbar>
+        <ToolbarSpacer/>
+        <Button text="Check ID" press="onIdCheck"/>
+        <Button text="Add product" press="onAdd" type="Accept"/>
+        <Button text="Cancel" press="onCancel" type="Reject" />
+      </Toolbar>
+    </headerContent>
+    <content>
+      <f:SimpleForm id ="productForm" 
+			layout="ResponsiveGridLayout"
+			labelSpanXL="4"
+			labelSpanL="4"
+			labelSpanM="12"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			columnsXL="2"
+			columnsL="2"
+			columnsM="1"
+			singleContainerFullSize="false">
+        <f:content>
+          <Label text="ID" />
+          <Input value="{newProduct>/ID}" type="Number" />
+          <Label text="Name" />
+          <Input id="productName" value="{newProduct>/Name}" type="Text" />
+          <Label text="Description" />
+          <Input value="{newProduct>/Description}" type="Text" />
+          <Label text="Release date"/>
+          <DatePicker  value="{path:'newProduct>/ReleaseDate', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'medium', strictParsing: true}}"/>
+          <Label text="Rating" />
+          <Input value="{newProduct>/Rating}" type="Number" />
+          <Label text="Price" />
+          <Input value="{newProduct>/Price}" type="Number" />
+          <Label text="Discontinued date"/>
+          <DatePicker  value="{path:'newProduct>/DiscontinuedDate', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'medium', strictParsing: true}}"/>
+        </f:content>
+      </f:SimpleForm>
+    </content>
+  </Page>
+</mvc:View>
