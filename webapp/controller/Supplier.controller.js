@@ -8,14 +8,14 @@ sap.ui.define(
     var me;
 
     function onRouteChange() {
-      //If application is loaded from Product view - return to main app view
-      if (!Globals.getProductKey()) {
+      //If application is loaded from Supplier view - return to main app view
+      if (!Globals.getSupplierKey()) {
         navigateBack();
         return;
       }
 
-      let bindingPath = "/Products(" + Globals.getProductKey() + ")";
-      me.getView().byId("productForm").bindObject(bindingPath);
+      let bindingPath = "/Suppliers(" + Globals.getSupplierKey() + ")";
+      me.getView().byId("supplierForm").bindObject(bindingPath);
     }
 
     function navigateBack() {
@@ -47,7 +47,7 @@ sap.ui.define(
     }
 
     function onDelete() {
-      me.getView().getModel().remove("/Products(" + Globals.getProductKey() + ")", {
+      me.getView().getModel().remove("/Suppliers(" + Globals.getSupplierKey() + ")", {
         method: "DELETE",
         success: function() {
           navigateBack();
@@ -58,21 +58,21 @@ sap.ui.define(
       });
     }
 
-    function onContinued(date) {
-      let result = (date === null);
-      return !result;
+    function onConcurrency(value) {
+      let result = (value === 0);
+      return result;
     }
 
-    return Controller.extend("companyRepo.appName.controller.Product", {
+    return Controller.extend("companyRepo.appName.controller.Supplier", {
       onInit: function() {
         me = this;
         let router = sap.ui.core.UIComponent.getRouterFor(me);
-        router.getRoute("routeProduct").attachPatternMatched(onRouteChange)
+        router.getRoute("routeSupplier").attachPatternMatched(onRouteChange)
       },
       onRouteChange: onRouteChange,
       navigateBack: navigateBack,
       onSave: onSave,
-      isContinued: onContinued,
+      isConcurrency: onConcurrency,
       onCancel: onCancel,
       onDelete: onDelete
     });

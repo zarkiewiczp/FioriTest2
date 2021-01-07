@@ -1,18 +1,36 @@
 <mvc:View controllerName="companyRepo.appName.controller.Main"
   xmlns="sap.m"
-  xmlns:mvc="sap.ui.core.mvc">
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:l="sap.ui.layout">
   <Page title="{i18n>Header}">
     <subHeader>
-      <Toolbar id="toolbar">
+<!--       <Toolbar id="toolbar">
         <Button text="New Product" type="Accept" press="createProduct"/>
       </Toolbar>
-    </subHeader>
+ -->    </subHeader>
     <content>
+    <l:HorizontalLayout class="sapUiContentPadding">
+      <Panel width="100%">
+      <Toolbar id="toolbarProduct">
+        <Button text="New Product" type="Accept" press="createProduct"/>
+      </Toolbar>
       <List headerText="Product Details" items="{/Products}">
         <items>
           <ObjectListItem type="Active" press="onProductPress" title="{Name}" number="{ID}" intro="{Description}"/>
         </items>
       </List>
+      </Panel>
+      <Panel width="200%">
+      <Toolbar id="toolbarSupplier">
+        <Button text="New Supplier" type="Accept" press="createSupplier"/>
+      </Toolbar>
+      <List headerText="Supplier Details" items="{/Suppliers}">
+        <items>
+          <ObjectListItem type="Active" press="onSupplierPress" title="{Name}" number="{ID}" intro="{Address/City}"/>
+        </items>
+      </List>
+      </Panel>
+      </l:HorizontalLayout>
     </content>
   </Page>
 </mvc:View>

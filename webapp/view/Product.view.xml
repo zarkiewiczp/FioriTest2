@@ -1,18 +1,50 @@
 <mvc:View controllerName="companyRepo.appName.controller.Product"
   xmlns="sap.m"
+  xmlns:l="sap.ui.layout"
+  xmlns:f="sap.ui.layout.form"
   xmlns:mvc="sap.ui.core.mvc">
   <Page title="Product view" class="sapUiResponsiveContentPadding"
     showNavButton="true"
 		navButtonPress="navigateBack">
+    <headerContent>
+      <Toolbar>
+        <ToolbarSpacer/>
+        <Button text="Delete" press="onDelete"  type="Reject" />
+        <Button text="Save" press="onSave" type="Accept"/>
+        <Button text="Cancel" press="onCancel" type="Reject" />
+      </Toolbar>
+    </headerContent>
     <content>
-      <ObjectHeader id="productObjectHeader"
-		title="{Name}"
-		number="{ID}"
-		class="sapUiResponsivePadding--header" >
-        <ObjectAttribute text="{Rating}" />
-        <ObjectAttribute text="{Price}" />
-        <ObjectAttribute text="{Description}" />
-      </ObjectHeader>
+      <f:SimpleForm id ="productForm" 
+			layout="ResponsiveGridLayout"
+			labelSpanXL="4"
+			labelSpanL="4"
+			labelSpanM="12"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			columnsXL="2"
+			columnsL="2"
+			columnsM="1"
+			singleContainerFullSize="false">
+        <f:content>
+          <Title text="Product is discontinued" visible="{
+							path: 'DiscontinuedDate',
+							formatter: '.isContinued'
+						}"/>
+          <Label text="ID" />
+          <Input value="{ID}" editable="false" type="Text" />
+          <Label text="Description" />
+          <Input value="{Description}" type="Text" />
+          <Label text="Release date"/>
+          <DatePicker  value="{path:'ReleaseDate', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'medium', strictParsing: true}}"/>
+          <Label text="Rating" />
+          <Input value="{Rating}" type="Number" />
+          <Label text="Price" />
+          <Input value="{Price}" type="Number" />
+          <Label text="Discontinued date"/>
+          <DatePicker  value="{path:'DiscontinuedDate', type:'sap.ui.model.type.DateTime', formatOptions: { style: 'medium', strictParsing: true}}"/>
+        </f:content>
+      </f:SimpleForm>
     </content>
   </Page>
 </mvc:View>

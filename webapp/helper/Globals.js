@@ -5,7 +5,8 @@ sap.ui.define(
     var Globals = ManagedObject.extend("companyRepo.appName.Globals", {
       metadata: {
         properties: {
-          productKey: { type: "string" }
+          productKey: { type: "string" },
+          supplierKey: { type: "string" }
         }
       },
     });
