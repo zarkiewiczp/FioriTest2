@@ -47,11 +47,6 @@
           "pattern": "productView",
           "name": "routeProduct",
           "target": "productView"
-        },
-        {
-          "pattern": "supplierView",
-          "name": "routeSupplier",
-          "target": "supplierView"
         }
       ],
       "targets": {
@@ -63,11 +58,6 @@
         "productView": {
           "viewId": "product",
           "viewName": "Product",
-          "viewLevel": 2
-        },
-        "supplierView": {
-          "viewId": "supplier",
-          "viewName": "Supplier",
           "viewLevel": 2
         }
       }
