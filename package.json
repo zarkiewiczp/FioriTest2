@@ -21,6 +21,6 @@
     "http-proxy": "^1.18.1"
   },
   "dependencies": {
-    "@ui5/cli": "^2.6.5"
+    "@ui5/cli": "^2.7.1"
   }
 }
