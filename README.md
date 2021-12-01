@@ -1,5 +1,4 @@
 # SAPUI5 application serving 1.71 library version
-Test
 
 ## Multi-page description:
 
@@ -20,8 +19,6 @@ Test
 - npm install
 
 ## Start project: use terminal commands:
-
-Another test
 
 1. node server.js
 2. Open url "http://localhost:8005/index.html"
